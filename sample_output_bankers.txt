@@ -1,0 +1,20 @@
+Need Matrix:
+P0: [7, 4, 3]
+P1: [1, 2, 2]
+P2: [6, 0, 0]
+P3: [0, 1, 1]
+P4: [4, 3, 1]
+
+System is in a Safe State.
+Safe Sequence: P1 → P3 → P4 → P0 → P2
+
+--- Unsafe example (Available = [0, 0, 0]) ---
+Need Matrix:
+P0: [7, 4, 3]
+P1: [1, 2, 2]
+P2: [6, 0, 0]
+P3: [0, 1, 1]
+P4: [4, 3, 1]
+
+System is NOT in a Safe State (Unsafe State - deadlock possible).
+No safe sequence exists.

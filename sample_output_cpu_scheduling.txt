@@ -1,0 +1,111 @@
+========================================================
+          CPU SCHEDULING SIMULATOR
+========================================================
+Enter number of processes: 5
+P1 - Arrival time and Burst time (e.g. 0 5): 2 8
+P2 - Arrival time and Burst time (e.g. 0 5): 3 4
+P3 - Arrival time and Burst time (e.g. 0 5): 4 9
+P4 - Arrival time and Burst time (e.g. 0 5): 5 5
+P5 - Arrival time and Burst time (e.g. 0 5): 6 2
+
+--- MENU ---
+1. FCFS                (Non-Preemptive)
+2. SJF                 (Non-Preemptive)
+3. SRTF / Preemptive SJF
+4. Round Robin         (Preemptive)
+5. Run ALL and compare
+0. Exit
+Choose an option: 5
+Enter time quantum for Round Robin: 3
+
+========================================================
+ First Come First Serve (Non-Preemptive)
+========================================================
+Gantt Chart:
+| IDLE | P1 | P2 | P3 | P4 | P5 |
+0      2    10   14   23   28   30
+
+PID   AT   BT   CT   TAT   WT
+------------------------------
+P1     2    8   10     8    0
+P2     3    4   14    11    7
+P3     4    9   23    19   10
+P4     5    5   28    23   18
+P5     6    2   30    24   22
+
+Average Waiting Time    : 11.40
+Average Turnaround Time : 17.00
+
+========================================================
+ Shortest Job First (Non-Preemptive)
+========================================================
+Gantt Chart:
+| IDLE | P1 | P5 | P2 | P4 | P3 |
+0      2    10   12   16   21   30
+
+PID   AT   BT   CT   TAT   WT
+------------------------------
+P1     2    8   10     8    0
+P2     3    4   16    13    9
+P3     4    9   30    26   17
+P4     5    5   21    16   11
+P5     6    2   12     6    4
+
+Average Waiting Time    : 8.20
+Average Turnaround Time : 13.80
+
+========================================================
+ Shortest Remaining Time First (Preemptive SJF)
+========================================================
+Gantt Chart:
+| IDLE | P1 | P2 | P5 | P4 | P1 | P3 |
+0      2    3    7    9    14   21   30
+
+PID   AT   BT   CT   TAT   WT
+------------------------------
+P1     2    8   21    19   11
+P2     3    4    7     4    0
+P3     4    9   30    26   17
+P4     5    5   14     9    4
+P5     6    2    9     3    1
+
+Average Waiting Time    : 6.60
+Average Turnaround Time : 12.20
+
+========================================================
+ Round Robin (Preemptive, Quantum = 3)
+========================================================
+Gantt Chart:
+| IDLE | P1 | P2 | P3 | P4 | P1 | P5 | P2 | P3 | P4 | P1 | P3 |
+0      2    5    8    11   14   17   19   20   23   25   27   30
+
+PID   AT   BT   CT   TAT   WT
+------------------------------
+P1     2    8   27    25   17
+P2     3    4   20    17   13
+P3     4    9   30    26   17
+P4     5    5   25    20   15
+P5     6    2   19    13   11
+
+Average Waiting Time    : 14.60
+Average Turnaround Time : 20.20
+
+========================================================
+ COMPARISON SUMMARY
+========================================================
+Algorithm         Avg WT     Avg TAT
+------------------------------------
+FCFS               11.40       17.00
+SJF                 8.20       13.80
+SRTF                6.60       12.20
+RR (q=3)           14.60       20.20
+
+--- MENU ---
+1. FCFS                (Non-Preemptive)
+2. SJF                 (Non-Preemptive)
+3. SRTF / Preemptive SJF
+4. Round Robin         (Preemptive)
+5. Run ALL and compare
+0. Exit
+Choose an option: 0
+Goodbye!
